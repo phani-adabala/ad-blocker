@@ -498,5 +498,15 @@
     "condition": {
       "urlFilter": "*://*.google.com/pagead/*"
     }
+  },
+  {
+    "id": 51,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "||youtube.com^$third-party"
+    }
   }
 ]
