@@ -2,7 +2,7 @@
   "name": "Adblocker",
   "version": "1.0.1",
   "description": "This adblocker is a free, open-source extension developed by Phanindar to enhance your browsing experience by blocking unwanted ads. If you appreciate the effort and would like to show your support, feel free to buy me a coffee by clicking the link.",
-  "permissions": ["declarativeNetRequest"],
+  "permissions": ["declarativeNetRequest", "declarativeNetRequestFeedback"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"

@@ -1,15 +1,14 @@
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("sw.js")
-      .then((registration) => {
-        console.log(
-          "ServiceWorker registration successful with scope: ",
-          registration.scope
-        );
-      })
-      .catch((error) => {
-        console.log("ServiceWorker registration failed: ", error);
-      });
-  });
-}
+let blockedAdsCount = 0;
+
+// Listen for blocked requests using the declarativeNetRequest API
+chrome.declarativeNetRequest.onRuleMatchedDebug.addListener((details) => {
+  blockedAdsCount += 1;
+  console.log(`Blocked ${blockedAdsCount} ads`);
+});
+
+// Listen for messages from popup to send the blocked ad count
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message === "getBlockedAdsCount") {
+    sendResponse({ count: blockedAdsCount });
+  }
+});

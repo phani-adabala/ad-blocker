@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phanindar Adblocker</title>
+    <title>Adblocker</title>
     <style>
       body {
         text-align: center;
         padding: 20px;
+        box-shadow: none;
       }
       .coffee-btn {
         display: inline-block;
@@ -18,10 +19,12 @@
         font-size: 16px;
         border-radius: 5px;
         font-family: Arial, sans-serif;
-        font-weight: bold;
+        font-weight: bold; /* Make the text bold */
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: none; /* Remove any shadow */
+        border: none; /* Ensure no border is present */
       }
       .coffee-btn:hover {
         background-color: #ffbb33;
@@ -37,14 +40,24 @@
         border-radius: 10px;
         vertical-align: middle;
       }
+      .count {
+        font-size: 20px;
+        color: green;
+        margin-top: 10px;
+      }
     </style>
   </head>
   <body>
+    <p>Number of ads blocked:</p>
+    <div class="count" id="blockedCount">0</div>
     <h2 style="font-family: Arial, Helvetica, sans-serif">
-      Adblocker by <a href="https://www.instagram.com/phanindar_adabala" style="color: orange;">
+      Adblocker by
+      <a
+        href="https://www.instagram.com/phanindar_adabala"
+        style="color: orange"
+      >
         Phanindar
       </a>
-      
     </h2>
     <a
       class="coffee-btn"
@@ -54,5 +67,7 @@
       <img class="coffee-img" src="coffee-cup.jpeg" alt="Coffee cup" />
       Buy me a coffee
     </a>
+
+    <script src="popup.js"></script>
   </body>
 </html>
